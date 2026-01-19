@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🏡 OFFICE ALONE</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Slick Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+      :root {
+        --main-green: #1b4332;
+        --classic-red: #c1121f;
+        --warm-gold: #f5c518;
+        --cream-white: #fff8e7;
+        --light-gray: #f4f4f4;
+        --charcoal-text: #1e1e1e;
+        --white: #fff;
+      }
+
+      body {
+        background: #0f0f14;
+        color: var(--white);
+        font-family: "Inter", serif;
+        scroll-behavior: smooth;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 64px;
+        line-height: 140%;
+        margin-bottom: 32px;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 140%;
+        margin-bottom: 32px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        line-height: 140%;
+        font-family: "Inter", serif;
+      }
+
+      h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 140%;
+        font-family: "Inter", serif;
+      }
+
+      .sub_header {
+        font-size: 20px;
+        line-height: 140%;
+        font-weight: 500;
+        margin-bottom: 24px !important;
+      }
+
+      p,
+      b,
+      span,
+      strong {
+        font-size: 18px;
+        line-height: 140%;
+      }
+      audio {
+        margin-top: 8px;
+      }
+
+      button {
+        margin-top: 32px;
+      }
+
+      /* Cover */
+      .cover {
+        min-height: 100vh;
+      }
+
+      .img-bg {
+        background: url(img/bg-1.webp);
+        background-color: #fff8e7b3;
+        background-size: cover;
+        background-blend-mode: color;
+        color: var(--main-green);
+      }
+
+      .img-bg.new-york {
+        background: url(img/bg-2.avif);
+        background-color: #fff8e7b3;
+        background-size: cover;
+        background-blend-mode: color;
+        color: var(--main-green);
+      }
+
+      .img-bg.house {
+        background: url(img/bg-3.jpg);
+        background-color: #fff8e7b3;
+        background-size: cover;
+        background-blend-mode: color;
+        color: var(--main-green);
+      }
+
+      .color-bg {
+        background-color: var(--main-green);
+        color: var(--cream-white);
+      }
+
+      .color-bg-white {
+        background-color: var(--cream-white);
+        color: var(--charcoal-text);
+      }
+
+      .color-bg img {
+        z-index: 1;
+      }
+
+      .btn {
+        display: block;
+        background: var(--classic-red);
+        border: none;
+        border-radius: 50px;
+        padding: 16px 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 24px auto;
+      }
+
+      .btn:hover {
+        background: var(--warm-gold);
+        color: var(--charcoal-text) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-calendar {
+        background: var(--cream-white);
+        color: var(--charcoal-text);
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+
+      /* Slick */
+      .slick-background {
+        display: flex;
+        align-items: flex-end;
+        height: 800px;
+        width: 800px;
+        background-image: url(img/kevin.png);
+        background-position: center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+      }
+
+      .slick-slider {
+        width: 100%;
+      }
+
+      .slick-slide img {
+        border-radius: 12px;
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .slick-prev,
+      .slick-next {
+        top: 35%;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: var(--main-green);
+      }
+
+      .slick-dots {
+        bottom: -60px;
+      }
+
+      /* Shared split section */
+      .section-title {
+        /*margin-bottom: 3rem;*/
+      }
+
+      /* Flip cards */
+      .flip-card {
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      .flip-inner {
+        position: relative;
+        height: 300px;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card.is-flipped .flip-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-front,
+      .flip-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        background: var(--white);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*padding: 1rem;*/
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+
+      .color-bg-white .flip-front {
+        background-color: var(--main-green);
+        color: var(--cream-white);
+        padding: 10px;
+      }
+
+      .color-bg-white .flip-back {
+        background-color: var(--classic-red);
+        color: var(--cream-white);
+        padding: 10px;
+      }
+
+      /* Calendar */
+      .calendar {
+        /*max-width: 420px;*/
+        max-width: 60%;
+      }
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.5rem;
+      }
+      #monthLabel {
+        font-size: 24px;
+      }
+      .day {
+        background: var(--cream-white);
+        border-radius: 8px;
+        padding: 1.2rem 0;
+        position: relative;
+        color: var(--charcoal-text);
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .birthday {
+        background: var(--classic-red);
+        color: var(--white);
+      }
+      .company {
+        background: blue;
+        color: var(--white);
+      }
+      .fun {
+        background: var(--warm-gold);
+        color: var(--white);
+      }
+      .tooltip {
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--charcoal-text);
+        padding: 0.4rem 0.6rem;
+        border-radius: 6px;
+        font-size: 18px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: 0.2s;
+        pointer-events: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: var(--cream-white) btn-calendar;
+      }
+      .day:hover .tooltip {
+        opacity: 1;
+      }
+
+      /* Closing */
+      .closing {
+        background: linear-gradient(#0f0f14, #000);
+        text-align: center;
+      }
+
+      /* Snowflakes */
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        color: var(--white);
+        font-size: 1em;
+        user-select: none;
+        pointer-events: none;
+        animation: fall linear infinite;
+        z-index: 9999;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+        }
+      }
+    </style>
+    <style>
+      .red-circle-left {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        z-index: 0;
+        top: -50%;
+        right: -100%;
+        border-radius: 500px;
+      }
+
+      .red-circle-right {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        z-index: 0;
+        top: -50%;
+        left: -100%;
+        border-radius: 500px;
+      }
+
+      .red-circle-left-small {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        z-index: 0;
+        top: 0%;
+        right: 0%;
+        border-radius: 500px;
+      }
+
+      .red-circle-right-small {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        z-index: 0;
+        top: 0%;
+        left: 0%;
+        border-radius: 500px;
+      }
+
+      .img-small {
+        height: 600px;
+        margin: auto;
+        display: block;
+      }
+
+      .img-big {
+        height: 600px;
+        margin: auto;
+        display: block;
+      }
+
+      .poster-line {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .poster-block {
+        background-color: var(--cream-white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 0 10px;
+        padding: 0;
+        margin: 24px 0 0 0;
+        width: 31%;
+        transition: all 0.3s ease;
+      }
+
+      .poster-block:hover {
+        transform: scale(1.1);
+      }
+    </style>
+    <style>
+      @media (max-width: 768px) {
+        .color-bg img,
+        .color-bg [class^="red-circle"] {
+          display: none !important;
+        }
+      }
+
+      .img-bg .flip-front > .img-flex,
+      .img-bg .flip-back > .img-flex {
+        flex: 0 0 30%;
+        width: 250px;
+        height: 100%;
+      }
+
+      .img-bg .flip-front,
+      .img-bg .flip-back {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cover -->
+    <section
+      class="img-bg cover d-flex flex-column justify-content-center align-items-center text-center"
+    >
+      <h1>🏡 OFFICE ALONE</h1>
+      <p class="sub_header">From Our Home Offices with Love</p>
+      <p><i>Set the mood — press play and keep scrolling</i></p>
+      <audio id="myaudio" controls loop>
+        <source
+          src="img/John Williams - Somewhere in my memory (Lyrics).mp4"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+      <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.05;
+      </script>
+      <a class="btn btn btn-lg text-white mb-4" href="#scroll"
+        >Open the Gazette</a
+      >
+
+      <!-- Slick carousel -->
+      <div class="slick-background">
+        <div class="slick-hero">
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+          <div><img src="img/bg-1.webp" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editor -->
+    <section class="color-bg text-center overflow-hidden">
+      <div class="row align-items-center g-5">
+        <div
+          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top"
+          style="position: relative"
+        >
+          <img src="img/1.png" class="color-img img-fluid rounded" />
+
+          <div class="red-circle-left bg-danger"></div>
+        </div>
+        <div class="col-md-10" id="scroll">
+          <h2 class="text-center section-title">Editor's Note</h2>
+          <p class="mx-auto text-start" style="max-width: 700px">
+            Another unforgettable year is behind us — filled with ideas,
+            deadlines, laughter, and countless messages. Even miles apart, our
+            digital family has once again proven that teamwork isn’t about walls
+            — it’s about connection, support, and a shared sense of humor.
+          </p>
+          <p class="mx-auto text-start" style="max-width: 700px">
+            As we step into 2026, may your Wi-Fi be strong, your coffee be hot,
+            and your creative energy at full battery (at least until February
+            😅).
+          </p>
+          <p class="mx-auto text-start" style="max-width: 700px">
+            Here’s to another year of the Office Alone spirit — unstoppable,
+            inventive, and delightfully chaotic.
+          </p>
+        </div>
+        <div
+          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top"
+          style="position: relative"
+        >
+          <img src="img/2.png" class="color-img img-fluid rounded" />
+
+          <div class="red-circle-right bg-danger"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="img-bg new-york">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <img
+              src="img/kevin-with-newspaper.png"
+              class="img-small img-fluid rounded"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2 class="section-title">NEWS FROM THE (HOME) OFFICE</h2>
+            <p class="sub_header">
+              New year, new energy — and a festive start to 2026
+            </p>
+            <div
+              class="col g-4"
+              style="display: flex; gap: 32px; flex-direction: column"
+            >
+              <div class="col-md-12 mb-[32px]">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front" style="gap: 32px">
+                      <div
+                        class="img-flex"
+                        style="
+                          background-image: url(img/bg-1.webp);
+                          background-size: cover;
+                          height: 100%;
+                          width: 250px;
+                          background-position: center;
+                        "
+                      ></div>
+                      <div style="margin-right: 32px">
+                        <h3>Headline</h3>
+                        <p>
+                          We’re starting the year with a special team gathering
+                          — our January corporate event! A chance to reconnect,
+                          recharge, and celebrate the beginning of 2026 together
+                          (finally not through a screen 🎄✨).
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flip-back" style="gap: 32px">
+                      <div class="img-flex"
+                        style="
+                          background-image: url(img/bg-1.webp);
+                          background-size: cover;
+                          height: 100%;
+                          width: 250px;
+                          background-position: center;
+                        "
+                      ></div>
+                      <div style="margin-right: 32px">
+                        <h3>Event Highlights:</h3>
+                        <p>
+                          (Will add details here — date, place, format, key
+                          moments, funny quotes, photos, etc.)
+                        </p>
+                        <h3>Team Moments:</h3>
+                        <p>(Will add photos after the event.)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-[32px]">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front" style="gap: 32px">
+                      <div class="img-flex"
+                        style="
+                          background-image: url(img/bg-1.webp);
+                          background-size: cover;
+                          height: 100%;
+                          width: 250px;
+                          background-position: center;
+                        "
+                      ></div>
+                      <div style="margin-right: 32px">
+                        <h3>January Conference</h3>
+                        <p>
+                          This January may be full of plans — and one of the key
+                          events ahead is our team’s conference. A perfect
+                          opportunity to dive into fresh ideas, share insights,
+                          and set the direction for the year. Whether it’s
+                          brainstorming, strategy, or inspiring discussions,
+                          this conference will help us start 2026 with clarity
+                          and momentum.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flip-back" style="gap: 32px">
+                      <div class="img-flex"
+                        style="
+                          background-image: url(img/bg-1.webp);
+                          background-size: cover;
+                          height: 100%;
+                          width: 250px;
+                          background-position: center;
+                        "
+                      ></div>
+                      <div style="margin-right: 32px">
+                        <h3>Conference Highlights:</h3>
+                        <p>(Will add agenda, key topics, format)</p>
+                        <h3>Takeaways & Moments:</h3>
+                        <p>
+                          Will add info later! Maybe we will have photos from
+                          the conference(after 21.01.2026).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="color-bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <h2 class="section-title">WORK FROM HOME ALONE</h2>
+            <p class="sub_header">
+              Back from holidays. Still working from couches
+            </p>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front">
+                      <h4 class="text-center">
+                        🧠 The Strategist — new year, same deadlines
+                      </h4>
+                    </div>
+                    <div class="flip-back">
+                      <h4 class="text-center">
+                        Congrats! You’ve successfully booby-trapped your 2026
+                        to-do list
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front">
+                      <h4 class="text-center">
+                        ☕ The Caffeine Commander — fueled entirely by espresso
+                      </h4>
+                    </div>
+                    <div class="flip-back">
+                      <h4 class="text-center">
+                        Alert level: 5 coffees. Productivity unclear, enthusiasm
+                        unmatched
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front">
+                      <h4 class="text-center">
+                        🧦 The Cozy Coder — pajamas since 2020
+                      </h4>
+                    </div>
+                    <div class="flip-back">
+                      <h4 class="text-center">
+                        Dress code: business on top, January hibernation on
+                        bottom
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="flip-card">
+                  <div class="flip-inner">
+                    <div class="flip-front">
+                      <h4 class="text-center">
+                        📱 The Multitasker — Zoom on one screen, Netflix on the
+                        other
+                      </h4>
+                    </div>
+                    <div class="flip-back">
+                      <h4 class="text-center">
+                        Breaking news: You’ve mastered the art of looking busy
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="img/gif-1.gif"
+              class="img-fluid rounded"
+              style="margin: auto; width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Celebrations -->
+    <section class="color-bg text-center overflow-hidden">
+      <div class="row align-items-center g-5">
+        <div
+          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top"
+          style="position: relative"
+        >
+          <img
+            src="img/HOME-ALONE-marv-1.webp"
+            class="color-img img-big rounded"
+          />
+
+          <div class="red-circle-left-small bg-danger"></div>
+        </div>
+        <div class="col-md-8">
+          <h2 class="text-center section-title">
+            Calendar Alone — <br />Don’t forget to celebrate!
+          </h2>
+          <p class="sub_header text-center">
+            New year, new energy — and a festive start to 2026
+          </p>
+          <div class="calendar mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <button
+                class="btn btn-calendar btn-sm btn-outline-light"
+                onclick="changeMonth(-1)"
+              >
+                ‹
+              </button>
+              <span id="monthLabel"></span>
+              <button
+                class="btn btn-calendar btn-sm btn-outline-light"
+                onclick="changeMonth(1)"
+              >
+                ›
+              </button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+        </div>
+        <div
+          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top"
+          style="position: relative"
+        >
+          <img
+            src="img/KevinMcCallister.webp"
+            class="color-img img-big rounded"
+          />
+
+          <div class="red-circle-right-small bg-danger"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="img-bg house" style="background-position: center">
+      <h2 class="text-center section-title">HOME ALONE MOMENTS</h2>
+      <p class="sub_header text-center">Our Team, Reimagined</p>
+      <div class="container">
+        <div class="row g-4 poster-line">
+          <div class="col-md-4 text-center poster-block">
+            <img src="img/poster-1.jpg" class="img-fluid rounded mb-2" />
+            <h4>Home Alone</h4>
+          </div>
+          <div class="col-md-4 text-center poster-block">
+            <img src="img/poster-2.jpg" class="img-fluid rounded mb-2" />
+            <h4>Home Alone: Lost In New-York</h4>
+          </div>
+          <div class="col-md-4 text-center poster-block">
+            <img src="img/poster-3.webp" class="img-fluid rounded mb-2" />
+            <h4>Home Alone: Lost In New-York</h4>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-danger" onclick="showWish()">
+            Reveal a Holiday Wish
+          </button>
+          <p id="wishText" class="sub_header"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="color-bg">
+      <h2 class="text-center">
+        Wishing you a productive, inspiring, and joyful 2026
+      </h2>
+    </section>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      /* Flip cards on click */
+      document.querySelectorAll(".flip-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("is-flipped");
+        });
+      });
+    </script>
+    <script>
+      $(".slick-hero").slick({
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+          { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+          { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+          { breakpoint: 400, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ],
+      });
+
+      /* Calendar */
+      const events = {
+        "2026-1-6": { text: "Marina Komina - Birthday", type: "birthday" },
+        "2026-1-7": { text: "Oksana Bulatova - Birthday", type: "birthday" },
+        "2026-2-12": { text: "Anna Ogula - Birthday", type: "birthday" },
+        "2026-2-19": { text: "Elena Us - Birthday", type: "birthday" },
+        "2026-3-24": {
+          text: "Oleksandr Bondarenko - Birthday",
+          type: "birthday",
+        },
+        "2026-4-5": { text: "Alina Heorhieva - Birthday", type: "birthday" },
+        "2026-4-21": { text: "Iryna Kysil", type: "birthday" },
+        "2026-4-30": {
+          text: "Kateryna Korkishko - Birthday",
+          type: "birthday",
+        },
+
+        "2026-5-20": {
+          text: "Anna Zolotarova & Inna Bytsenko - Birthday",
+          type: "birthday",
+        },
+
+        "2026-7-21": {
+          text: "Karyna Serebrianska - Birthday",
+          type: "birthday",
+        },
+
+        "2026-1-2": {
+          text: "Anna Ogula - Anniversary (6 years)",
+          type: "company",
+        },
+        "2026-1-16": {
+          text: "Lena Us - Anniversary (9 years)",
+          type: "company",
+        },
+        "2026-2-10": {
+          text: "Liza Borovyk (Travenko) - Anniversary (1 year)",
+          type: "company",
+        },
+        "2026-3-11": {
+          text: "Marina Komina - Anniversary (5 years)",
+          type: "company",
+        },
+        "2026-6-2": {
+          text: "Anna Zolotarova - Anniversary (11 years)",
+          type: "company",
+        },
+        "2026-618": {
+          text: "Iryna Kysil' - Anniversary (1 year)",
+          type: "company",
+        },
+        "2026-7-15": {
+          text: "Asya Samokhatnia - Anniversary (1 year)",
+          type: "company",
+        },
+        "2026-7-28": {
+          text: "Roman Moskalov - Anniversary (4 years)",
+          type: "company",
+        },
+        "2026-1-1": { text: "New Year", type: "fun" },
+        "2026-3-8": { text: "International Women's Day", type: "fun" },
+        "2026-4-12": { text: "Easter", type: "fun" },
+        "2026-5-1": { text: "Labor Day", type: "fun" },
+        "2025-5-8": { text: "Memorial Day", type: "fun" },
+        "2025-5-31": { text: "Trinity Holiday", type: "fun" },
+        "2025-6-28": { text: "Constitution Day", type: "fun" },
+        "2026-7-15": { text: "Statehood Day of Ukraine", type: "fun" },
+      };
+
+      let current = new Date(new Date().getFullYear(), 0, 1);
+
+      function renderCalendar() {
+        const y = current.getFullYear(),
+          m = current.getMonth();
+        document.getElementById("monthLabel").innerText =
+          current.toLocaleString("default", { month: "long", year: "numeric" });
+        const grid = document.getElementById("calendarGrid");
+        grid.innerHTML = "";
+        const first = new Date(y, m, 1).getDay();
+        const days = new Date(y, m + 1, 0).getDate();
+        for (let i = 0; i < first; i++)
+          grid.appendChild(document.createElement("div"));
+        for (let d = 1; d <= days; d++) {
+          const key = `${y}-${m + 1}-${d}`;
+          const cell = document.createElement("div");
+          cell.className = "day";
+          cell.innerText = d;
+          if (events[key]) {
+            cell.classList.add(events[key].type);
+            const tip = document.createElement("div");
+            tip.className = "tooltip";
+            tip.innerText = events[key].text;
+            cell.appendChild(tip);
+          }
+          grid.appendChild(cell);
+        }
+      }
+      function changeMonth(dir) {
+        const next = new Date(current);
+        next.setMonth(current.getMonth() + dir);
+        // Allow only January (0) through July (6)
+        if (next.getMonth() < 0 || next.getMonth() > 6) return;
+        current = next;
+        renderCalendar();
+      }
+      renderCalendar();
+
+      /* Snow generator */
+      const snowCount = 40;
+      for (let i = 0; i < snowCount; i++) {
+        const snow = document.createElement("div");
+        snow.className = "snowflake";
+        snow.innerText = "❄";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = 5 + Math.random() * 10 + "s";
+        snow.style.opacity = Math.random();
+        snow.style.fontSize = 12 + Math.random() * 18 + "px";
+        document.body.appendChild(snow);
+      }
+
+      const wishes = [
+        "💌 Even if your coffee's gone cold, your ideas are still hot! ☕✨",
+        "💌 Remember: Kevin survived being home alone… you can survive another Zoom meeting. 💻😅",
+        "💌 Deadlines may chase you, but you’ve got the holiday spirit to outrun them. 🏃🎁",
+        "💌 The best teamwork doesn’t always happen in the office—sometimes it’s in pajamas with a cat on your keyboard. 🐾🧦",
+        "💌 If you hear strange noises, relax. It’s probably just your creativity breaking free. 🎨💡",
+        "💌 This season, may your Wi-Fi be strong and your coffee stronger. 📶☕",
+        "💌 You’re not stuck working from home — you’re starring in your own sequel: Home Office 2: The Productivity Strikes Back! 🎬🎄",
+        "💌 Be kind, stay cozy, and remember — the real magic is in making each other smile. 🌟💛",
+      ];
+
+      function showWish() {
+        const el = document.getElementById("wishText");
+        el.innerText = wishes[Math.floor(Math.random() * wishes.length)];
+        el.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
