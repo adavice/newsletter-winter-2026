@@ -288,7 +288,7 @@
       }
       .fun {
         background: var(--warm-gold);
-        color: var(--white);
+        color: var(--charcoal-text);
       }
       .tooltip {
         position: absolute;
@@ -400,6 +400,7 @@
         margin: 24px 0 0 0;
         width: 31%;
         transition: all 0.3s ease;
+        overflow: hidden;
       }
 
       .poster-block:hover {
@@ -519,7 +520,7 @@
         }
 
         .flip-inner {
-          height: 450px;
+          height: 530px;
         }
 
         .flip-front,
@@ -545,11 +546,12 @@
         }
 
         .calendar {
-          max-width: 100%;
+          max-width: 90%;
         }
 
         .day {
-          padding: 0.6rem 0;
+          padding: 0.3rem 0;
+          font-size: 16px;
         }
 
         .poster-block {
@@ -558,6 +560,26 @@
 
         .color-bg .last-img {
           display: block !important;
+        }
+
+        .calendar .btn {
+          font-size: 16px;
+          padding: 3px 10px;
+        }
+
+        #monthLabel {
+          font-size: 18px;
+        }
+
+        .tooltip {
+          width: 120px;
+          font-size: 14px;
+          white-space: wrap;
+          text-align: center;
+        }
+
+        .company .tooltip {
+          width: 155px;
         }
       }
 
