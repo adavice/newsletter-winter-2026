@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>🏡 OFFICE ALONE</title>
-
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -409,10 +408,6 @@
     </style>
     <style>
       @media (max-width: 768px) {
-        .color-bg img,
-        .color-bg [class^="red-circle"] {
-          display: none !important;
-        }
       }
 
       .img-bg .flip-front > .img-flex,
@@ -428,6 +423,152 @@
         align-items: center;
         justify-content: stretch;
       }
+
+      .calendar-weekdays div {
+        font-size: 16px;
+        opacity: 0.7;
+        margin-bottom: 15px;
+      }
+    </style>
+    <style>
+      .img-card {
+        background-image: url(img/bg-1.webp);
+        background-size: cover;
+        height: 100%;
+        width: 250px;
+        background-position: center;
+      }
+
+      .flip-front,
+      .flip-back {
+        gap: 32px;
+      }
+
+      .text-card {
+        margin-right: 32px;
+      }
+
+      @media (max-width: 900px) {
+        .color-bg img,
+        .color-bg [class^="red-circle"] {
+          display: none !important;
+        }
+
+        .flip-inner {
+          height: 400px;
+        }
+
+        .calendar {
+          max-width: 90%;
+        }
+      }
+
+      /* =====================
+       ≤ 768px (TABLETS / LARGE PHONES)
+    ====================== */
+      @media (max-width: 768px) {
+        .slick-background {
+          height: 600px;
+          width: 90%;
+          background-size: 75%;
+          background-position: top;
+        }
+
+        h1 {
+          font-size: 48px;
+          margin-bottom: 24px;
+        }
+
+        h2 {
+          font-size: 24px;
+          margin-bottom: 24px;
+          text-align: center;
+        }
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+
+        h4 {
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+
+        .sub_header {
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 20px !important;
+        }
+
+        p,
+        b,
+        span,
+        strong {
+          font-size: 16px;
+        }
+
+        .img-bg .flip-front,
+        .img-bg .flip-back {
+          flex-direction: column;
+        }
+
+        .btn {
+          font-size: 20px;
+          margin: 16px auto;
+        }
+
+        .flip-inner {
+          height: 450px;
+        }
+
+        .flip-front,
+        .flip-back {
+          gap: 16px;
+        }
+
+        .img-card {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .text-card {
+          margin: 10px 32px;
+        }
+
+        .color-bg-white .flip-inner {
+          height: 300px;
+        }
+
+        .color-bg-white .flip-inner .flip-front h4 {
+          font-size: 24px;
+        }
+
+        .calendar {
+          max-width: 100%;
+        }
+
+        .day {
+          padding: 0.6rem 0;
+        }
+
+        .poster-block {
+          width: 100%;
+        }
+
+        .color-bg .last-img {
+          display: block !important;
+        }
+      }
+
+      /* =====================
+       ≤ 480px (MOBILE PHONES)
+    ====================== */
+      @media (max-width: 480px) {
+        .slick-background {
+          height: 450px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -438,13 +579,23 @@
       <h1>🏡 OFFICE ALONE</h1>
       <p class="sub_header">From Our Home Offices with Love</p>
       <p><i>Set the mood — press play and keep scrolling</i></p>
-      <audio id="myaudio" controls loop>
+
+      <audio controls preload="none" id="myaudio" class="mb-4" loop>
         <source
-          src="img/John Williams - Somewhere in my memory (Lyrics).mp4"
+          src="img/John Williams - Somewhere in my memory (Lyrics).mp3"
           type="audio/mpeg"
+        />
+        <source
+          src="img/John-Williams-Somewhere-in-my-memory-_Lyrics_.ogg"
+          type="audio/ogg"
+        />
+        <source
+          src="img/John Williams - Somewhere in my memory (Lyrics).wav"
+          type="audio/wav"
         />
         Your browser does not support the audio element.
       </audio>
+
       <script>
         var audio = document.getElementById("myaudio");
         audio.volume = 0.05;
@@ -470,17 +621,16 @@
     </section>
 
     <!-- Editor -->
-    <section class="color-bg text-center overflow-hidden">
+    <section class="color-bg text-center overflow-hidden" id="scroll">
       <div class="row align-items-center g-5">
         <div
-          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top"
-          style="position: relative"
+          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top position-relative z-0"
         >
           <img src="img/1.png" class="color-img img-fluid rounded" />
 
           <div class="red-circle-left bg-danger"></div>
         </div>
-        <div class="col-md-10" id="scroll">
+        <div class="col-md-10 z-1">
           <h2 class="text-center section-title">Editor's Note</h2>
           <p class="mx-auto text-start" style="max-width: 700px">
             Another unforgettable year is behind us — filled with ideas,
@@ -499,8 +649,7 @@
           </p>
         </div>
         <div
-          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top"
-          style="position: relative"
+          class="col-md-1 m-0 p-0 d-flex flex-column align-items-top position-relative z-0"
         >
           <img src="img/2.png" class="color-img img-fluid rounded" />
 
@@ -513,13 +662,14 @@
     <section class="img-bg new-york">
       <div class="container">
         <div class="row align-items-center g-5">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <img
               src="img/kevin-with-newspaper.png"
+              style="width: 100%; height: auto"
               class="img-small img-fluid rounded"
             />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <h2 class="section-title">NEWS FROM THE (HOME) OFFICE</h2>
             <p class="sub_header">
               New year, new energy — and a festive start to 2026
@@ -531,18 +681,9 @@
               <div class="col-md-12 mb-[32px]">
                 <div class="flip-card">
                   <div class="flip-inner">
-                    <div class="flip-front" style="gap: 32px">
-                      <div
-                        class="img-flex"
-                        style="
-                          background-image: url(img/bg-1.webp);
-                          background-size: cover;
-                          height: 100%;
-                          width: 250px;
-                          background-position: center;
-                        "
-                      ></div>
-                      <div style="margin-right: 32px">
+                    <div class="flip-front">
+                      <div class="img-flex img-card"></div>
+                      <div class="text-card">
                         <h3>Headline</h3>
                         <p>
                           We’re starting the year with a special team gathering
@@ -552,17 +693,9 @@
                         </p>
                       </div>
                     </div>
-                    <div class="flip-back" style="gap: 32px">
-                      <div class="img-flex"
-                        style="
-                          background-image: url(img/bg-1.webp);
-                          background-size: cover;
-                          height: 100%;
-                          width: 250px;
-                          background-position: center;
-                        "
-                      ></div>
-                      <div style="margin-right: 32px">
+                    <div class="flip-back">
+                      <div class="img-flex img-card"></div>
+                      <div class="text-card">
                         <h3>Event Highlights:</h3>
                         <p>
                           (Will add details here — date, place, format, key
@@ -578,17 +711,9 @@
               <div class="col-md-12 mb-[32px]">
                 <div class="flip-card">
                   <div class="flip-inner">
-                    <div class="flip-front" style="gap: 32px">
-                      <div class="img-flex"
-                        style="
-                          background-image: url(img/bg-1.webp);
-                          background-size: cover;
-                          height: 100%;
-                          width: 250px;
-                          background-position: center;
-                        "
-                      ></div>
-                      <div style="margin-right: 32px">
+                    <div class="flip-front">
+                      <div class="img-flex img-card"></div>
+                      <div class="text-card">
                         <h3>January Conference</h3>
                         <p>
                           This January may be full of plans — and one of the key
@@ -601,17 +726,9 @@
                         </p>
                       </div>
                     </div>
-                    <div class="flip-back" style="gap: 32px">
-                      <div class="img-flex"
-                        style="
-                          background-image: url(img/bg-1.webp);
-                          background-size: cover;
-                          height: 100%;
-                          width: 250px;
-                          background-position: center;
-                        "
-                      ></div>
-                      <div style="margin-right: 32px">
+                    <div class="flip-back">
+                      <div class="img-flex img-card"></div>
+                      <div class="text-card">
                         <h3>Conference Highlights:</h3>
                         <p>(Will add agenda, key topics, format)</p>
                         <h3>Takeaways & Moments:</h3>
@@ -633,13 +750,13 @@
     <section class="color-bg-white">
       <div class="container">
         <div class="row align-items-center g-5">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <h2 class="section-title">WORK FROM HOME ALONE</h2>
             <p class="sub_header">
               Back from holidays. Still working from couches
             </p>
             <div class="row g-4">
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="flip-card">
                   <div class="flip-inner">
                     <div class="flip-front">
@@ -647,16 +764,20 @@
                         🧠 The Strategist — new year, same deadlines
                       </h4>
                     </div>
-                    <div class="flip-back">
+                    <div
+                      class="flip-back"
+                      style="display: flex; flex-direction: column"
+                    >
                       <h4 class="text-center">
                         Congrats! You’ve successfully booby-trapped your 2026
                         to-do list
                       </h4>
+                      <img src="img/gif-2.gif" style="width: 80%" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="flip-card">
                   <div class="flip-inner">
                     <div class="flip-front">
@@ -664,16 +785,20 @@
                         ☕ The Caffeine Commander — fueled entirely by espresso
                       </h4>
                     </div>
-                    <div class="flip-back">
+                    <div
+                      class="flip-back"
+                      style="display: flex; flex-direction: column"
+                    >
                       <h4 class="text-center">
                         Alert level: 5 coffees. Productivity unclear, enthusiasm
                         unmatched
                       </h4>
+                      <img src="img/gif-5.webp" style="width: 50%" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="flip-card">
                   <div class="flip-inner">
                     <div class="flip-front">
@@ -681,40 +806,42 @@
                         🧦 The Cozy Coder — pajamas since 2020
                       </h4>
                     </div>
-                    <div class="flip-back">
+                    <div
+                      class="flip-back"
+                      style="display: flex; flex-direction: column"
+                    >
                       <h4 class="text-center">
                         Dress code: business on top, January hibernation on
                         bottom
                       </h4>
+
+                      <img src="img/gif-4.webp" style="width: 80%" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="flip-card">
                   <div class="flip-inner">
                     <div class="flip-front">
                       <h4 class="text-center">
-                        📱 The Multitasker — Zoom on one screen, Netflix on the
-                        other
+                        🧘 The Steady One — unbothered, unfazed
                       </h4>
                     </div>
-                    <div class="flip-back">
+                    <div
+                      class="flip-back"
+                      style="display: flex; flex-direction: column"
+                    >
                       <h4 class="text-center">
-                        Breaking news: You’ve mastered the art of looking busy
+                        ➡️ While others panic, you quietly keep things moving
                       </h4>
+
+                      <img src="img/gif-6.webp" style="width: 80%" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="img/gif-1.gif"
-              class="img-fluid rounded"
-              style="margin: auto; width: 100%"
-            />
           </div>
         </div>
       </div>
@@ -724,8 +851,7 @@
     <section class="color-bg text-center overflow-hidden">
       <div class="row align-items-center g-5">
         <div
-          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top"
-          style="position: relative"
+          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top position-relative z-0"
         >
           <img
             src="img/HOME-ALONE-marv-1.webp"
@@ -734,7 +860,7 @@
 
           <div class="red-circle-left-small bg-danger"></div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 z-1">
           <h2 class="text-center section-title">
             Calendar Alone — <br />Don’t forget to celebrate!
           </h2>
@@ -757,12 +883,15 @@
                 ›
               </button>
             </div>
+            <div
+              class="calendar-grid calendar-weekdays"
+              id="calendarWeekdays"
+            ></div>
             <div class="calendar-grid" id="calendarGrid"></div>
           </div>
         </div>
         <div
-          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top"
-          style="position: relative"
+          class="col-md-2 m-0 p-0 d-flex flex-column align-items-top position-relative z-0"
         >
           <img
             src="img/KevinMcCallister.webp"
@@ -802,11 +931,104 @@
       </div>
     </section>
 
+    <section class="color-bg-white">
+      <h2 class="text-center section-title">CLOSING PAGE + GIVEAWAY</h2>
+      <p class="sub_header text-center">That’s a Wrap — January Edition!</p>
+
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-md-5">
+            <img
+              src="img/gif-7.webp"
+              class="img-fluid rounded"
+              style="margin: auto; width: 100%"
+            />
+          </div>
+          <div class="col-md-7">
+            <p>
+              The holidays may be over, but our mugs of coffee (and survival
+              cocoa ☕) are still raised high for you — the unstoppable dream
+              team that kicks off every new year with energy, chaos, and charm.
+            </p>
+            <p>
+              You’ve returned from the holidays just like Kevin: a little
+              confused, slightly dramatic, but absolutely ready to outsmart
+              anything this year throws at you.
+            </p>
+
+            <p>Deadlines? Outsmarted.</p>
+            <p>Meetings? Survived.</p>
+            <p>Motivation? …Loading, but we believe in you.</p>
+
+            <p>
+              As we dive into 2026, may your ideas spark brighter than fairy
+              lights, your Zoom calls stay blessedly short, and your to-do list
+              behave itself (for once 😅).
+            </p>
+            <p>
+              Thank you for filling our Office Alone universe with humor,
+              warmth, and that special kind of remote-team magic we wouldn`t
+              trade for anything.
+            </p>
+            <p>❄ ️ Wishing you a cozy, creative, chaos-friendly 2026 year!</p>
+          </div>
+        </div>
+        <div class="row align-items-center g-5">
+          <div class="col-md-6">
+            <img
+              src="img/crossword.svg"
+              class="img-fluid rounded"
+              style="margin: auto; width: 100%"
+            />
+          </div>
+          <div class="col-md-6">
+            <div>
+              <h3>Down</h3>
+              <p>1.&nbsp;What food does the McCallister family love?</p>
+              <p>
+                2.&nbsp;What's the final word in the infamous quote, "Merry
+                Christmas, ya filthy..."?
+              </p>
+              <p>
+                3.&nbsp;What are the two guys who make an unexpected surprise at
+                Kevin's house?
+              </p>
+              <p>5.&nbsp;Harry's hand is burned by what?</p>
+              <p>6.&nbsp;What is glued to Harry's face?</p>
+              <p>
+                8.&nbsp;Where is the McCallister family going for vacation in
+                the original Home Alone?
+              </p>
+            </div>
+            <div>
+              <h3>Across</h3>
+              <p>4.&nbsp;What is Kevin McCallister's real first name?</p>
+              <p>7.&nbsp;What do Harry and Marv try to climb to reach Kevin?</p>
+              <p>
+                8.&nbsp;Where are Kevin's parents before they realize they've
+                left him behind?
+              </p>
+              <p>9.&nbsp;What hits Mary when he pulls a bulb?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Closing -->
     <section class="color-bg">
       <h2 class="text-center">
         Wishing you a productive, inspiring, and joyful 2026
       </h2>
+      <p class="sub_header text-center">
+        May this year reward your efforts, spark new opportunities, and keep our
+        Office Alone spirit strong. <br />
+        Happy New Year — and let’s make it amazing together! 🎆💼
+      </p>
+      <img
+        src="img/gif-3.webp"
+        class="last-img img-fluid rounded mx-auto d-block mt-4"
+      />
     </section>
 
     <!-- JS -->
@@ -838,35 +1060,13 @@
 
       /* Calendar */
       const events = {
-        "2026-1-6": { text: "Marina Komina - Birthday", type: "birthday" },
-        "2026-1-7": { text: "Oksana Bulatova - Birthday", type: "birthday" },
-        "2026-2-12": { text: "Anna Ogula - Birthday", type: "birthday" },
-        "2026-2-19": { text: "Elena Us - Birthday", type: "birthday" },
-        "2026-3-24": {
-          text: "Oleksandr Bondarenko - Birthday",
-          type: "birthday",
-        },
-        "2026-4-5": { text: "Alina Heorhieva - Birthday", type: "birthday" },
-        "2026-4-21": { text: "Iryna Kysil", type: "birthday" },
-        "2026-4-30": {
-          text: "Kateryna Korkishko - Birthday",
-          type: "birthday",
-        },
-
-        "2026-5-20": {
-          text: "Anna Zolotarova & Inna Bytsenko - Birthday",
-          type: "birthday",
-        },
-
-        "2026-7-21": {
-          text: "Karyna Serebrianska - Birthday",
-          type: "birthday",
-        },
-
+        "2026-1-1": { text: "New Year", type: "fun" },
         "2026-1-2": {
           text: "Anna Ogula - Anniversary (6 years)",
           type: "company",
         },
+        "2026-1-6": { text: "Marina Komina - Birthday", type: "birthday" },
+        "2026-1-7": { text: "Oksana Bulatova - Birthday", type: "birthday" },
         "2026-1-16": {
           text: "Lena Us - Anniversary (9 years)",
           type: "company",
@@ -875,43 +1075,69 @@
           text: "Liza Borovyk (Travenko) - Anniversary (1 year)",
           type: "company",
         },
+        "2026-2-12": { text: "Anna Ogula - Birthday", type: "birthday" },
+        "2026-2-19": { text: "Elena Us - Birthday", type: "birthday" },
+        "2026-3-8": { text: "International Women's Day", type: "fun" },
         "2026-3-11": {
           text: "Marina Komina - Anniversary (5 years)",
           type: "company",
         },
+        "2026-3-24": {
+          text: "Oleksandr Bondarenko - Birthday",
+          type: "birthday",
+        },
+        "2026-4-5": { text: "Alina Heorhieva - Birthday", type: "birthday" },
+        "2026-4-12": { text: "Easter", type: "fun" },
+        "2026-4-21": { text: "Iryna Kysil - Birthday", type: "birthday" },
+        "2026-4-30": {
+          text: "Kateryna Korkishko - Birthday",
+          type: "birthday",
+        },
+        "2026-5-1": { text: "Labor Day", type: "fun" },
+        "2026-5-8": { text: "Memorial Day", type: "fun" },
+        "2026-5-20": {
+          text: "Anna Zolotarova & Inna Bytsenko - Birthday",
+          type: "birthday",
+        },
+        "2026-5-31": { text: "Trinity Holiday", type: "fun" },
         "2026-6-2": {
           text: "Anna Zolotarova - Anniversary (11 years)",
           type: "company",
         },
-        "2026-618": {
+        "2026-6-18": {
           text: "Iryna Kysil' - Anniversary (1 year)",
           type: "company",
         },
+        "2026-6-28": { text: "Constitution Day", type: "fun" },
         "2026-7-15": {
-          text: "Asya Samokhatnia - Anniversary (1 year)",
+          text: "Asya Samokhatnia - Anniversary (1 year) & Statehood Day of Ukraine",
           type: "company",
+        },
+        "2026-7-21": {
+          text: "Karyna Serebrianska - Birthday",
+          type: "birthday",
         },
         "2026-7-28": {
           text: "Roman Moskalov - Anniversary (4 years)",
           type: "company",
         },
-        "2026-1-1": { text: "New Year", type: "fun" },
-        "2026-3-8": { text: "International Women's Day", type: "fun" },
-        "2026-4-12": { text: "Easter", type: "fun" },
-        "2026-5-1": { text: "Labor Day", type: "fun" },
-        "2025-5-8": { text: "Memorial Day", type: "fun" },
-        "2025-5-31": { text: "Trinity Holiday", type: "fun" },
-        "2025-6-28": { text: "Constitution Day", type: "fun" },
-        "2026-7-15": { text: "Statehood Day of Ukraine", type: "fun" },
       };
 
       let current = new Date(new Date().getFullYear(), 0, 1);
 
       function renderCalendar() {
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const weekdayGrid = document.getElementById("calendarWeekdays");
+        weekdayGrid.innerHTML = "";
+        weekdays.forEach((d) => {
+          const el = document.createElement("div");
+          el.innerText = d;
+          weekdayGrid.appendChild(el);
+        });
         const y = current.getFullYear(),
           m = current.getMonth();
         document.getElementById("monthLabel").innerText =
-          current.toLocaleString("default", { month: "long", year: "numeric" });
+          current.toLocaleString("en-US", { month: "long", year: "numeric" });
         const grid = document.getElementById("calendarGrid");
         grid.innerHTML = "";
         const first = new Date(y, m, 1).getDay();
@@ -933,6 +1159,7 @@
           grid.appendChild(cell);
         }
       }
+
       function changeMonth(dir) {
         const next = new Date(current);
         next.setMonth(current.getMonth() + dir);
