@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>🏡 OFFICE ALONE</title>
+    <title>OFFICE ALONE</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -50,33 +50,33 @@
       }
 
       h1 {
-        font-size: 64px;
+        font-size: 80px;
         line-height: 140%;
         margin-bottom: 32px;
       }
 
       h2 {
-        font-size: 32px;
+        font-size: 40px;
         line-height: 140%;
         margin-bottom: 32px;
       }
 
       h3 {
-        font-size: 20px;
+        font-size: 26px;
         margin-bottom: 12px;
         line-height: 140%;
         font-family: "Inter", serif;
       }
 
       h4 {
-        font-size: 18px;
+        font-size: 24px;
         margin-bottom: 12px;
         line-height: 140%;
         font-family: "Inter", serif;
       }
 
       .sub_header {
-        font-size: 20px;
+        font-size: 24px;
         line-height: 140%;
         font-weight: 500;
         margin-bottom: 24px !important;
@@ -86,9 +86,10 @@
       b,
       span,
       strong {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 140%;
       }
+
       audio {
         margin-top: 8px;
       }
@@ -142,6 +143,7 @@
 
       .btn {
         display: block;
+        font-size: 24px;
         background: var(--classic-red);
         border: none;
         border-radius: 50px;
@@ -213,7 +215,7 @@
 
       .flip-inner {
         position: relative;
-        height: 300px;
+        height: 360px;
         transition: 0.6s;
         transform-style: preserve-3d;
       }
@@ -253,6 +255,31 @@
         padding: 10px;
       }
 
+      /*card*/
+
+      .card {
+        display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: row;
+      }
+
+      .card .img-flex {
+  height: -webkit-fill-available;
+    position: relative;
+    display: block;
+}
+
+.card .img-card {
+    background-image: url(img/bg-1.webp);
+    background-size: cover;
+    width: 800px;
+    background-position: center;}
+
+.card .text-card {
+  margin: 32px;
+  }
+
       /* Calendar */
       .calendar {
         /*max-width: 420px;*/
@@ -272,7 +299,7 @@
         padding: 1.2rem 0;
         position: relative;
         color: var(--charcoal-text);
-        font-size: 20px;
+        font-size: 24px;
         cursor: pointer;
       }
       .birthday {
@@ -295,7 +322,7 @@
         background: var(--charcoal-text);
         padding: 0.4rem 0.6rem;
         border-radius: 6px;
-        font-size: 18px;
+        font-size: 24px;
         white-space: nowrap;
         opacity: 0;
         transition: 0.2s;
@@ -423,7 +450,7 @@
       }
 
       .calendar-weekdays div {
-        font-size: 16px;
+        font-size: 20px;
         opacity: 0.7;
         margin-bottom: 15px;
       }
@@ -539,6 +566,15 @@
           font-size: 24px;
         }
 
+        .card{
+          flex-direction: column;
+        }
+
+        .card .img-card {
+        width: 100% !important;
+        height: 440px !important;
+    }
+
         .calendar {
           max-width: 90%;
         }
@@ -575,6 +611,10 @@
         .company .tooltip {
           width: 165px;
         }
+
+        .no-mb-img .img-small{
+          display: none;
+        }
       }
 
       @media (max-width: 480px) {
@@ -583,11 +623,66 @@
         }
       }
     </style>
+    <style>
+      .zodiac-wheel {
+        max-width: 100%;
+        margin: auto;
+        cursor: pointer;
+      }
+    
+      .zodiac-slice {
+        transition: opacity 0.2s;
+      }
+    
+      .zodiac-slice:hover {
+        opacity: 0.85;
+      }
+    
+      .zodiac-symbol {
+        font-size: 8px;
+        font-weight: bold;
+      }
+    
+      .zodiac-name {
+        font-size: 6px;
+        font-weight: 600;
+      }
+    
+      .zodiac-date {
+        font-size: 7px;
+        opacity: 0.9;
+      }
+    
+      text {
+        pointer-events: none;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      .modal-content {
+  background-color: var(--cream-white);
+  color: var(--charcoal-text);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+.modal-body img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+</style>
   </head>
     <section
       class="img-bg cover d-flex flex-column justify-content-center align-items-center text-center"
     >
-      <h1>🏡 OFFICE ALONE</h1>
+      <h1>OFFICE ALONE</h1>
       <p class="sub_header">From Our Home Offices with Love</p>
       <p><i>Set the mood — press play and keep scrolling</i></p>
 
@@ -616,16 +711,13 @@
       >
 
       <div class="slick-background">
-        <div class="slick-hero">
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
-          <div><img src="img/bg-1.webp" /></div>
+        <div class="slick-hero-1">
+          <div><img src="img/event/carousel/1.jpg" /></div>
+          <div><img src="img/event/carousel/2.jpg" /></div>
+          <div><img src="img/event/carousel/3.jpg" /></div>
+          <div><img src="img/event/carousel/4.jpg" /></div>
+          <div><img src="img/event/carousel/5.jpg" /></div>
+          <div><img src="img/event/carousel/6.jpg" /></div>
         </div>
       </div>
     </section>
@@ -667,9 +759,13 @@
       </div>
     </section>
 
-    <section class="img-bg new-york">
+    <section class="img-bg new-york no-mb-img">
+      <h2 class="section-title text-center">NEWS FROM THE (HOME) OFFICE</h2>
+            <p class="sub_header text-center">
+              New year, new energy — and a festive start to 2026
+            </p>
       <div class="container">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center mb-4">
           <div class="col-md-4">
             <img
               src="img/kevin-with-newspaper.png"
@@ -678,80 +774,90 @@
             />
           </div>
           <div class="col-md-8">
-            <h2 class="section-title">NEWS FROM THE (HOME) OFFICE</h2>
-            <p class="sub_header">
-              New year, new energy — and a festive start to 2026
-            </p>
-            <div
-              class="col g-4"
-              style="display: flex; gap: 32px; flex-direction: column"
-            >
-              <div class="col-md-12 mb-[32px]">
-                <div class="flip-card">
-                  <div class="flip-inner">
-                    <div class="flip-front">
-                      <div class="img-flex img-card"></div>
-                      <div class="text-card">
-                        <h3>Headline</h3>
-                        <p>
-                          We’re starting the year with a special team gathering
-                          — our January corporate event! A chance to reconnect,
-                          recharge, and celebrate the beginning of 2026 together
-                          (finally not through a screen 🎄✨).
-                        </p>
-                      </div>
-                    </div>
-                    <div class="flip-back">
-                      <div class="img-flex img-card"></div>
-                      <div class="text-card">
-                        <h3>Event Highlights:</h3>
-                        <p>
-                          (Will add details here — date, place, format, key
-                          moments, funny quotes, photos, etc.)
-                        </p>
-                        <h3>Team Moments:</h3>
-                        <p>(Will add photos after the event.)</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 mb-[32px]">
-                <div class="flip-card">
-                  <div class="flip-inner">
-                    <div class="flip-front">
-                      <div class="img-flex img-card"></div>
-                      <div class="text-card">
-                        <h3>January Conference</h3>
-                        <p>
-                          This January may be full of plans — and one of the key
-                          events ahead is our team’s conference. A perfect
-                          opportunity to dive into fresh ideas, share insights,
-                          and set the direction for the year. Whether it’s
-                          brainstorming, strategy, or inspiring discussions,
-                          this conference will help us start 2026 with clarity
-                          and momentum.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="flip-back">
-                      <div class="img-flex img-card"></div>
-                      <div class="text-card">
-                        <h3>Conference Highlights:</h3>
-                        <p>(Will add agenda, key topics, format)</p>
-                        <h3>Takeaways & Moments:</h3>
-                        <p>
-                          Will add info later! Maybe we will have photos from
-                          the conference(after 21.01.2026).
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div class="card">
+                  <div class="img-flex img-card" style="background-image: url(img/event/5456170305467388083.jpg);"></div>
+                  <div class="text-card">
+                    <h3>Our “Home Away from Home”</h3>
+                    <p>
+                      <i>On the last weekend of January, our team escaped the city for a cozy countryside retreat — a real Home Alone–style getaway, but with no traps and only good vibes 😉<br/></i>
+                    </p> <p>We stayed in warm, comfortable cabins surrounded by nature, where time slowed down and conversations flowed easily. Long walks led us to a peaceful lake, perfect for fresh air, photos, and quiet moments to recharge.
+                     </p>
               </div>
             </div>
           </div>
         </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-md-12 mb-5">
+                <div class="card">
+                      <div class="text-card">
+                        <p>Evenings were filled with board games, laughter, and friendly competition, while days were all about connecting, sharing stories, and enjoying each other’s company. Cameras were always nearby — capturing candid smiles, group shots, and those little moments that make great memories.
+                        </p>
+                        <p><i>It was a weekend of team bonding, relaxation, and genuine fun — simple, warm, and unforgettable. Just like being at home… only better.</i></p>
+                        <p style="text-align: center; font-weight: bold;"><i>Bringing our people together. Building what’s next:</i></p>
+                      </div>
+              </div>
+</div>
+              <div class="col-md-12">
+                <div class="slick-hero-2">
+                  <div><img src="img/event/carousel/7.jpg" /></div>
+                  <div><img src="img/event/carousel/8.jpg" /></div>
+                  <div><img src="img/event/carousel/9.jpg" /></div>
+                  <div><img src="img/event/carousel/10.jpg" /></div>
+                  <div><img src="img/event/carousel/11.jpg" /></div>
+                  <div><img src="img/event/carousel/12.jpg" /></div>
+                </div>
+              </div>
+
+        </div>
+
+        <div class="row align-items-center mt-5 mb-5">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="img-flex img-card" style="width: 1500px; background-image: url(img/conference/2.jpg);" ></div>
+              <div class="text-card">
+                <h3>January Conference: ICE Barcelona 2026</h3>
+                <p>
+                  <i>January is shaping up to be a month full of important milestones, and one of the key highlights was our participation in ICE Barcelona 2026 — the world’s leading gaming exhibition.</i>
+                </p> 
+                <p>
+                  Our CEO, Shahar, attended the conference to represent the team, establish new connections, strengthen partnerships, and reconnect with long-standing industry contacts. 
+                </p>
+          </div>
+        </div>
+      </div>
+          <div class="col-md-6">
+            <img
+              src="img/kevin-with-book.png"
+              style="width: 100%; height: auto"
+              class="img-small img-fluid rounded"
+            />
+          </div>
+
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-md-12 mb-5">
+                <div class="card">
+                      <div class="text-card">
+                        <p><i>ICE Barcelona brought together global leaders, innovators, and experts, making it a valuable space for networking, trend-spotting, and exchanging ideas that shape the future of the industry.</i></p>
+                        <p>The event provided fresh perspectives, inspiring conversations, and insights that will support our strategic direction and growth throughout 2026.
+                        </p>
+                        <p style="text-align: center; font-weight: bold;"><i>Learning, connecting, and shaping the future together:</i></p>
+                  </div>
+              </div>
+</div>
+              <div class="col-md-12">
+                <div class="slick-hero-2">
+                  <div><img src="img/conference/1.jpg" /></div>
+                  <div><img src="img/conference/3.jpg" /></div>
+                  <div><img src="img/conference/4.jpg" /></div>
+                  <div><img src="img/conference/5.jpg" /></div>
+                  <div><img src="img/conference/6.jpg" /></div>
+                  <div><img src="img/conference/7.jpg" /></div>
+                </div>
+              </div>
+
+        </div>
+
       </div>
     </section>
 
@@ -759,8 +865,8 @@
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-md-12">
-            <h2 class="section-title">WORK FROM HOME ALONE</h2>
-            <p class="sub_header">
+            <h2 class="section-title text-center">WORK FROM HOME ALONE</h2>
+            <p class="sub_header text-center">
               Back from holidays. Still working from couches
             </p>
             <div class="row g-4">
@@ -910,13 +1016,48 @@
       </div>
     </section>
 
+    <section class="color-bg-white overflow-hidden no-mb-img">
+      <h2 class="text-center section-title">⭐ 2026 Office Forecast ⭐</h2>
+      <p class="sub_header text-center">Unexpected twists may happen, but with planning, humor, and teamwork, this year has a happy ending</p>
+     <div class="container">
+     <div class="row align-items-center g-5">
+
+     <div class="col-md-6">
+      <img src="img/3.png" style="width: 100%; height: auto" class="img-small img-fluid rounded">
+     </div>
+     <div class="col-md-6">
+      <svg viewBox="0 0 200 200" class="zodiac-wheel">
+        <g id="wheel"></g>
+      </svg>
+     </div>
+     </div>
+     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="horoscopeModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+    
+          <div class="modal-body text-center">
+            <img id="modalImage" alt="" />
+            <p id="modalBody" class="mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
     <section class="img-bg house" style="background-position: center">
       <h2 class="text-center section-title">HOME ALONE MOMENTS</h2>
       <p class="sub_header text-center">Our Team, Reimagined</p>
       <div class="container">
         <div class="row g-4 poster-line">
           <div class="col-md-4 text-center poster-block">
-            <img src="img/poster-1.jpg" class="img-fluid rounded mb-2" />
+            <img src="img/poster-1.png" class="img-fluid rounded mb-2" />
             <h4>Home Alone</h4>
           </div>
           <div class="col-md-4 text-center poster-block">
@@ -1029,7 +1170,7 @@
       <p class="sub_header text-center">
         May this year reward your efforts, spark new opportunities, and keep our
         Office Alone spirit strong. <br />
-        Happy New Year — and let’s make it amazing together! 🎆💼
+        Happy New Year — and let’s make it amazing together! 
       </p>
       <img
         src="img/gif-3.webp"
@@ -1049,11 +1190,25 @@
       });
     </script>
     <script>
-      $(".slick-hero").slick({
+      $(".slick-hero-1").slick({
         dots: true,
         arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+          { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+          { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+          { breakpoint: 400, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ],
+      });
+
+      $(".slick-hero-2").slick({
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
         slidesToShow: 3,
         slidesToScroll: 3,
         responsive: [
@@ -1070,7 +1225,7 @@
           text: "Anna Ogula - Anniversary (6 years)",
           type: "company",
         },
-        "2026-1-6": { text: "Marina Komina - Birthday", type: "birthday" },
+        "2026-1-6": { text: "Marina Komina - Birthday & Asya Samokhatnia - Anniversary (1 year)", type: "birthday" },
         "2026-1-7": { text: "Oksana Bulatova - Birthday", type: "birthday" },
         "2026-1-16": {
           text: "Lena Us - Anniversary (9 years)",
@@ -1115,7 +1270,7 @@
         },
         "2026-6-28": { text: "Constitution Day", type: "fun" },
         "2026-7-15": {
-          text: "Asya Samokhatnia - Anniversary (1 year) & Statehood Day of Ukraine",
+          text: "Statehood Day of Ukraine",
           type: "company",
         },
         "2026-7-21": {
@@ -1205,5 +1360,165 @@
         el.style.display = "block";
       }
     </script>
+
+<script>
+  const colorThemes = [
+    { bg: "#1b4332", text: "#fff8e7" }, // main green
+    { bg: "#c1121f", text: "#fff8e7" }, // classic red
+    { bg: "#f5c518", text: "#1e1e1e" }  // warm gold
+  ];
+
+  const signs = [
+    {
+      name: "Aries",
+      symbol: "♈",
+      dates: "Mar 21 – Apr 19",
+      image: "img/horoscope-1.gif",
+      prediction: "In 2026 you act fast — sometimes before the plan is ready. A little strategy before action will save time, nerves, and a few imaginary paint cans",
+    },
+    {
+      name: "Taurus",
+      symbol: "♉",
+      dates: "Apr 20 – May 20",
+      image: "img/horoscope-2.webp",
+      prediction: "You protect stability like Kevin protects his house. While others panic, you calmly keep things under control — snacks included",
+    },
+    {
+      name: "Gemini",
+      symbol: "♊",
+      dates: "May 21 – Jun 20",
+      image: "img/horoscope-3.webp",
+      prediction: "Messages, calls, meetings — you’re everywhere. Just make sure nothing important is left behind before the action starts",
+    },
+    {
+      name: "Cancer",
+      symbol: "♋",
+      dates: "Jun 21 – Jul 22",
+      image: "img/horoscope-4.webp",
+      prediction: "You create a safe and friendly atmosphere, even when things get chaotic. In 2026, your support keeps the team together",
+    },
+    {
+      name: "Leo",
+      symbol: "♌",
+      dates: "Jul 23 – Aug 22",
+      image: "img/horoscope-5.webp",
+      prediction: "You naturally step into the spotlight. Use it wisely — lead with confidence, not drama, and the team will follow",
+    },
+    {
+      name: "Virgo",
+      symbol: "♍",
+      dates: "Aug 23 – Sep 22",
+      image: "img/horoscope-6.webp",
+      prediction: "Every detail is planned, every move calculated. Your careful approach helps avoid “slippery” situations throughout the year",
+    },
+    {
+      name: "Libra",
+      symbol: "♎",
+      dates: "Sep 23 – Oct 22",
+      image: "img/horoscope-7.webp",
+      prediction: "When opinions collide, you restore balance smoothly. In 2026, your diplomacy prevents more than one office disaster",
+    },
+    {
+      name: "Scorpio",
+      symbol: "♏",
+      dates: "Oct 23 – Nov 21",
+      image: "img/horoscope-8.webp",
+      prediction: "Quiet, focused, and always prepared. You don’t announce your moves — you just get results",
+    },
+    {
+      name: "Sagittarius",
+      symbol: "♐",
+      dates: "Nov 22 – Dec 21",
+      image: "img/horoscope-9.webp",
+      prediction: "You turn challenges into adventures. Even routine tasks feel lighter when you bring humor and curiosity to the table",
+    },
+    {
+      name: "Capricorn",
+      symbol: "♑",
+      dates: "Dec 22 – Jan 19",
+      image: "img/horoscope-10.webp",
+      prediction: "You’re the one who actually reads the instructions. In a year full of surprises, your structure keeps everything standing",
+    },
+    {
+      name: "Aquarius",
+      symbol: "♒",
+      dates: "Jan 20 – Feb 18",
+      image: "img/horoscope-11.webp",
+      prediction: "Your ideas may look unusual at first — then everyone realizes they work perfectly. Creative traps, smart solutions",
+    },
+    {
+      name: "Pisces",
+      symbol: "♓",
+      dates: "Feb 19 – Mar 20",
+      image: "img/horoscope-12.webp",
+      prediction: "Kindness and empathy are your strongest tools. In 2026, you remind the team that teamwork always wins in the end",
+    },
+  ];
+
+  const wheel = document.getElementById("wheel");
+  const cx = 100, cy = 100, r = 90;
+  const sliceAngle = 360 / signs.length;
+
+  signs.forEach((sign, i) => {
+    const theme = colorThemes[i % colorThemes.length];
+
+    const startAngle = sliceAngle * i;
+    const endAngle = startAngle + sliceAngle;
+
+    const start = polar(cx, cy, r, endAngle);
+    const end = polar(cx, cy, r, startAngle);
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", `
+      M ${cx} ${cy}
+      L ${start.x} ${start.y}
+      A ${r} ${r} 0 0 0 ${end.x} ${end.y}
+      Z
+    `);
+    path.setAttribute("fill", theme.bg);
+    path.classList.add("zodiac-slice");
+
+    path.addEventListener("click", () => {
+  document.getElementById("modalTitle").innerText =
+    `${sign.symbol} ${sign.name} (${sign.dates})`;
+
+  const img = document.getElementById("modalImage");
+  img.src = sign.image;
+  img.alt = sign.name;
+
+  document.getElementById("modalBody").innerText = sign.prediction;
+
+  new bootstrap.Modal(document.getElementById("horoscopeModal")).show();
+});
+
+
+    wheel.appendChild(path);
+
+    const midAngle = startAngle + sliceAngle / 2;
+    const pos = polar(cx, cy, r * 0.62, midAngle);
+
+    addText(pos.x, pos.y - 6, sign.symbol, "zodiac-symbol", theme.text);
+    addText(pos.x, pos.y + 4, sign.name, "zodiac-name", theme.text);
+  });
+
+  function addText(x, y, content, className, color) {
+    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("x", x);
+    text.setAttribute("y", y);
+    text.setAttribute("fill", color);
+    text.textContent = content;
+    text.classList.add(className);
+    wheel.appendChild(text);
+  }
+
+  function polar(cx, cy, r, deg) {
+    const rad = (deg - 90) * Math.PI / 180;
+    return {
+      x: cx + r * Math.cos(rad),
+      y: cy + r * Math.sin(rad)
+    };
+  }
+</script>
+
   </body>
 </html>
